@@ -1,9 +1,23 @@
-module.exports = {
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path';
+
+export default defineConfig({
   base: './',
-  assetsDir: 'assets',
-  cssPreprocessOptions: {
-    scss: {
-      additionalData: '@import "./src/assets/scss/all.scss";'
-    }
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
-}
+  build: {
+    assetsDir: 'assets',
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/assets/scss/all.scss" as *;`,
+      },
+    },
+  },
+});
