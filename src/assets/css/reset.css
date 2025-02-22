@@ -132,6 +132,7 @@ a {
   color: #7e8c8d;
   text-decoration: none;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -159,7 +160,8 @@ a {
 html,
 body {
   width: 100%;
-  font-family: "Roboto", "Arial", "Microsoft YaHei", "黑体", "宋体", "微软雅黑", sans-serif;
+  font-family: 'Roboto', 'Arial', 'Microsoft YaHei', '黑体', '宋体', '微软雅黑',
+    sans-serif;
 }
 
 body {
@@ -168,14 +170,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html {
-  /* overflow-y: scroll; */
-}
-
 /*清除浮动*/
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: ' ';
   display: inline-block;
   height: 0;
   clear: both;
@@ -183,7 +181,7 @@ html {
 }
 
 .clearfix {
-  *zoom: 1;
+  clear: both;
 }
 
 /*隐藏*/
