@@ -3,43 +3,39 @@
     <section>
       <h1 class="first">介绍与开始</h1>
       <h2>介绍 Introduce</h2>
-      <p>iSQ UI 是一套基于Vue3.0，用 TypeScript 编写而成的UI框架。免费、开源。</p>
+      <p>
+        iSQ UI 是一套基于 Vue3.0，用 TypeScript 编写而成的UI框架。免费、开源。
+      </p>
       <h2>安装 Installing</h2>
       <h3>使用 npm 安装：</h3>
-      <p>
-        <pre class="ter">
+      <pre class="ter">
           <code>npm install isq-ui</code>
         </pre>
-      </p>
       <h3>或者使用 yarn 安装：</h3>
-      <p>
-        <pre class="ter">
-          <code>yarn add isq-ui</code>
-        </pre>
-      </p>
+      <pre class="ter">
+        <code>yarn add isq-ui</code>
+      </pre>
       <h2>使用 Usage</h2>
-      <p>
-        <pre class="ter">
-          <code class="language-html" v-text="code"></code>
-        </pre>
-      </p>
-      
+      <pre class="ter">
+        <code class="language-html" v-text="code"></code>
+      </pre>
     </section>
   </div>
 </template>
 
-<script lang='ts'>
-import Prism from "prismjs";
-import "prismjs/themes/prism-solarizedlight.css";
+<script lang="ts">
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-solarizedlight.css';
 import { onMounted } from 'vue';
 
 export default {
-  name: "Intro",
+  name: 'Intro',
   setup() {
-    onMounted(()=>{
+    onMounted(() => {
       Prism.highlightAll();
-    })
-    const code = `<template>
+    });
+    const code =
+      `<template>
   <Button>按钮</Button>
 </template>
 
@@ -55,15 +51,15 @@ export default {
   components: {
     Button
   }
-}\n`+ "<\/script>";
+}\n` + '<\/script>';
     return {
-      code
-    }
-  }
+      code,
+    };
+  },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 h1.first {
   margin-top: 0;
 }
