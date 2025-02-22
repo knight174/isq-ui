@@ -1,6 +1,6 @@
 {
   "name": "isq-ui",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "files": [
     "*dist/lib/*"
   ],
@@ -26,5 +26,6 @@
     "sass": "^1.85.0",
     "typescript": "^5.7.3",
     "vite": "^6.1.1"
-  }
+  },
+  "copyright": "Copyright © 2021-2025 Knight"
 }
