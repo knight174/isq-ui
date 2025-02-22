@@ -9,21 +9,20 @@
   </Tabs>
 </template>
 
-<script lang='ts'>
-import { ref } from "vue";
-import Tab from "../../../lib/Tab.vue";
-import Tabs from "../../../lib/Tabs.vue";
+<script lang="ts">
+import { ref } from 'vue';
+import Tab from '../../../lib/Tab.vue';
+import Tabs from '../../../lib/Tabs.vue';
 export default {
   components: {
     Tab,
     Tabs,
   },
   setup() {
-    const activeTitle = ref<String>("导航项目-1");
+    const activeTitle = ref<string>('导航项目-1');
     return {
       activeTitle,
     };
   },
 };
 </script>
-

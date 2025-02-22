@@ -17,13 +17,13 @@
   </section>
 </template>
 
-<script lang='ts'>
-import Prism from "prismjs";
-import "prismjs/themes/prism-solarizedlight.css";
-import Button from "../lib/Button.vue";
-import { onMounted, ref } from "vue";
+<script lang="ts">
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-solarizedlight.css';
+import Button from '../lib/Button.vue';
+import { onMounted, ref } from 'vue';
 export default {
-  name: "DemoTemplate",
+  name: 'DemoTemplate',
   components: {
     Button,
   },
@@ -39,13 +39,13 @@ export default {
     },
   },
   setup(props, context) {
-    const code = ref<HTMLDivElement>(null);
+    const code = ref<HTMLDivElement | null>(null);
 
     const handleDrop = () => {
-      if (!code.value.classList.contains("open")) {
-        code.value.classList.add("open");
-      } else {
-        code.value.classList.remove("open");
+      if (code.value && !code.value.classList.contains('open')) {
+        code.value.classList.add('open');
+      } else if (code.value) {
+        code.value.classList.remove('open');
       }
     };
 
@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .demo-component {
   button.isq-btn {
     margin-right: 1rem;
@@ -74,11 +74,11 @@ export default {
 .demo-code {
   overflow: hidden;
   max-height: 0;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   &.open {
     height: auto;
     max-height: 1200px;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 }
 </style>
