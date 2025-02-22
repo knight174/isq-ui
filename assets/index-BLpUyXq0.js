@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/NotFound-DRb8LlLh.js","assets/NotFound-BiVTB47C.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/NotFound-Vl-qy3i7.js","assets/NotFound-BiVTB47C.css"])))=>i.map(i=>d[i]);
 (function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const i of o)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&s(r)}).observe(document,{childList:!0,subtree:!0});function n(o){const i={};return o.integrity&&(i.integrity=o.integrity),o.referrerPolicy&&(i.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?i.credentials="include":o.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function s(o){if(o.ep)return;o.ep=!0;const i=n(o);fetch(o.href,i)}})();/**
 * @vue/shared v3.5.13
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
@@ -278,34 +278,31 @@ export default {
   },
 };
 <\/script>`,TabsCase1:ir}}},Td={class:"tabs-demo isq-demo"};function Rd(e,t,n,s,o,i){const r=Y("DemoTemplate");return V(),X("div",Td,[t[0]||(t[0]=D("section",null,[D("h1",null,"选项卡 Tabs"),D("h3",null,"简单、可响应的水平导航选项卡。")],-1)),S(r,{caseTitle:"水平选项卡",demoComp:s.TabsCase1,demoHtmlStr:s.demo1},null,8,["demoComp","demoHtmlStr"])])}const Md=ee(Fd,[["render",Rd]]),Pd=Hs({name:"Card",props:{header:{type:String,default:""},shadow:{type:String,values:["always","hover","never"],default:"always"},hoverable:{type:Boolean,default:!1}}}),Dd={key:0,class:"isq-card-header"},Od={class:"isq-card-body"},kd={key:1,class:"isq-card-footer"};function Id(e,t,n,s,o,i){return V(),X("div",{class:vt(["isq-card",{[`isq-card-${e.shadow}`]:e.shadow,"is-hoverable":e.hoverable}])},[e.$slots.header||e.header?(V(),X("div",Dd,[At(e.$slots,"header",{},()=>[U(Lt(e.header),1)])])):qt("",!0),D("div",Od,[At(e.$slots,"default")]),e.$slots.footer?(V(),X("div",kd,[At(e.$slots,"footer")])):qt("",!0)],2)}const zn=ee(Pd,[["render",Id]]),Hd={components:{Card:zn}},Ld={class:"demo-block"};function jd(e,t,n,s,o,i){const r=Y("Card");return V(),X("div",Ld,[S(r,null,{header:q(()=>t[0]||(t[0]=[U("卡片标题")])),default:q(()=>[t[1]||(t[1]=D("div",null,"这是卡片的内容，可以包含任何内容。",-1))]),_:1})])}const lr=ee(Hd,[["render",jd],["__scopeId","data-v-e84b1559"]]),qd={components:{Card:zn}},Nd={class:"demo-block"};function Ud(e,t,n,s,o,i){const r=Y("Card");return V(),X("div",Nd,[S(r,{shadow:"never"},{default:q(()=>t[0]||(t[0]=[D("div",null,"无阴影的卡片",-1)])),_:1})])}const ur=ee(qd,[["render",Ud],["__scopeId","data-v-236d0306"]]),Vd={components:{Card:zn}},Kd={class:"demo-block"};function Wd(e,t,n,s,o,i){const r=Y("Card");return V(),X("div",Kd,[S(r,{shadow:"hover",hoverable:""},{header:q(()=>t[0]||(t[0]=[U("悬浮显示阴影")])),default:q(()=>[t[1]||(t[1]=D("div",null,"鼠标悬浮时会有阴影和上浮效果",-1))]),_:1})])}const ar=ee(Vd,[["render",Wd],["__scopeId","data-v-0e9f2e70"]]),zd={components:{Card:zn,Button:Oe}},Gd={class:"demo-block"};function Qd(e,t,n,s,o,i){const r=Y("Button"),l=Y("Card");return V(),X("div",Gd,[S(l,null,{header:q(()=>t[0]||(t[0]=[U("完整示例")])),footer:q(()=>[S(r,null,{default:q(()=>t[1]||(t[1]=[U("操作按钮")])),_:1})]),default:q(()=>[t[2]||(t[2]=D("div",null,"卡片的主要内容",-1))]),_:1})])}const cr=ee(zd,[["render",Qd],["__scopeId","data-v-d6f54f6e"]]),Yd={name:"CardDemo",components:{DemoTemplate:mn,CardDemo1:lr,CardDemo2:ur,CardDemo3:ar,CardDemo4:cr},setup(){const e=`
-<script lang='ts'>
-// import the component (Card) and the css file
+<script lang="ts">
 import { Card } from 'isq-ui'
 import 'isq-ui/dist/lib/isq.css'
 
 export default {
-  components: {
-    Card,
-  },
-};
+  components: { Card }
+}
 <\/script>`,t=`
 <template>
   <Card>
     <template #header>卡片标题</template>
     <div>这是卡片的内容，可以包含任何内容。</div>
   </Card>
-</template>`+e,n=`
+</template>${e}`,n=`
 <template>
   <Card shadow="never">
     <div>无阴影的卡片</div>
   </Card>
-</template>`+e,s=`
+</template>${e}`,s=`
 <template>
   <Card shadow="hover" hoverable>
     <template #header>悬浮显示阴影</template>
     <div>鼠标悬浮时会有阴影和上浮效果</div>
   </Card>
-</template>`+e,o=`
+</template>${e}`,o=`
 <template>
   <Card>
     <template #header>完整示例</template>
@@ -314,4 +311,4 @@ export default {
       <Button>操作按钮</Button>
     </template>
   </Card>
-</template>`+e;return{demo1:t,demo2:n,demo3:s,demo4:o,CardCase1:lr,CardCase2:ur,CardCase3:ar,CardCase4:cr}}},Jd={class:"card-demo isq-demo"};function Zd(e,t,n,s,o,i){const r=Y("DemoTemplate");return V(),X("div",Jd,[t[0]||(t[0]=D("section",null,[D("h1",null,"卡片 Card"),D("h3",null,"卡片（Card）是一种常见的容器组件，用于展示内容。")],-1)),S(r,{caseTitle:"基础用法 Basic Usage",demoComp:s.CardCase1,demoHtmlStr:s.demo1},null,8,["demoComp","demoHtmlStr"]),S(r,{caseTitle:"无阴影 No Shadow",demoComp:s.CardCase2,demoHtmlStr:s.demo2},null,8,["demoComp","demoHtmlStr"]),S(r,{caseTitle:"悬浮效果 Hover Effect",demoComp:s.CardCase3,demoHtmlStr:s.demo3},null,8,["demoComp","demoHtmlStr"]),S(r,{caseTitle:"带页脚 With Footer",demoComp:s.CardCase4,demoHtmlStr:s.demo4},null,8,["demoComp","demoHtmlStr"])])}const Xd=ee(Yd,[["render",Zd],["__scopeId","data-v-9624b1d9"]]),ep=qa(),Mn=dc({history:ep,scrollBehavior:()=>({left:0,top:0}),routes:[{path:"/",name:"Home",component:Lc},{path:"/doc",redirect:{name:"Intro"},name:"Doc",component:nf,children:[{path:"intro",name:"Intro",component:df},{path:"switch",name:"SwitchDemo",component:Pf},{path:"button",name:"ButtonDemo",component:Qf},{path:"modal",name:"ModalDemo",component:hd},{path:"tabs",name:"TabsDemo",component:Md},{path:"card",name:"CardDemo",component:Xd}]},{path:"/:pathMatch(.*)*",name:"NotFound",component:()=>aa(()=>import("./NotFound-DRb8LlLh.js"),__vite__mapDeps([0,1]))}]}),tp={name:"App",setup(){const e=window.innerWidth,t=De(!(e<750));en("mark",t),Mn.afterEach((s,o)=>{e<750&&(t.value=!1)});function n(){const s=window.innerWidth;s>=750&&(t.value=!0),Mn.afterEach((o,i)=>{s<750&&(t.value=!1)})}(function(s){window.addEventListener("resize",i,!1);let o;function i(){o||(o=setTimeout(function(){o=null,s()},66))}})(n)}};function np(e,t,n,s,o,i){const r=Y("router-view");return V(),We(r)}const sp=ee(tp,[["render",np]]),qi=wi(sp);qi.use(Mn);qi.mount("#app");export{ee as _,D as a,U as b,X as c,S as d,V as o,Y as r,q as w};
+</template>${e}`;return{demo1:t,demo2:n,demo3:s,demo4:o,CardCase1:lr,CardCase2:ur,CardCase3:ar,CardCase4:cr}}},Jd={class:"card-demo isq-demo"};function Zd(e,t,n,s,o,i){const r=Y("DemoTemplate");return V(),X("div",Jd,[t[0]||(t[0]=D("section",null,[D("h1",null,"卡片 Card"),D("h3",null,"卡片（Card）是一种常见的容器组件，用于展示内容。")],-1)),S(r,{caseTitle:"基础用法 Basic Usage",demoComp:s.CardCase1,demoHtmlStr:s.demo1},null,8,["demoComp","demoHtmlStr"]),S(r,{caseTitle:"无阴影 No Shadow",demoComp:s.CardCase2,demoHtmlStr:s.demo2},null,8,["demoComp","demoHtmlStr"]),S(r,{caseTitle:"悬浮效果 Hover Effect",demoComp:s.CardCase3,demoHtmlStr:s.demo3},null,8,["demoComp","demoHtmlStr"]),S(r,{caseTitle:"带页脚 With Footer",demoComp:s.CardCase4,demoHtmlStr:s.demo4},null,8,["demoComp","demoHtmlStr"])])}const Xd=ee(Yd,[["render",Zd],["__scopeId","data-v-7b27eb36"]]),ep=qa(),Mn=dc({history:ep,scrollBehavior:()=>({left:0,top:0}),routes:[{path:"/",name:"Home",component:Lc},{path:"/doc",redirect:{name:"Intro"},name:"Doc",component:nf,children:[{path:"intro",name:"Intro",component:df},{path:"switch",name:"SwitchDemo",component:Pf},{path:"button",name:"ButtonDemo",component:Qf},{path:"modal",name:"ModalDemo",component:hd},{path:"tabs",name:"TabsDemo",component:Md},{path:"card",name:"CardDemo",component:Xd}]},{path:"/:pathMatch(.*)*",name:"NotFound",component:()=>aa(()=>import("./NotFound-Vl-qy3i7.js"),__vite__mapDeps([0,1]))}]}),tp={name:"App",setup(){const e=window.innerWidth,t=De(!(e<750));en("mark",t),Mn.afterEach((s,o)=>{e<750&&(t.value=!1)});function n(){const s=window.innerWidth;s>=750&&(t.value=!0),Mn.afterEach((o,i)=>{s<750&&(t.value=!1)})}(function(s){window.addEventListener("resize",i,!1);let o;function i(){o||(o=setTimeout(function(){o=null,s()},66))}})(n)}};function np(e,t,n,s,o,i){const r=Y("router-view");return V(),We(r)}const sp=ee(tp,[["render",np]]),qi=wi(sp);qi.use(Mn);qi.mount("#app");export{ee as _,D as a,U as b,X as c,S as d,V as o,Y as r,q as w};
