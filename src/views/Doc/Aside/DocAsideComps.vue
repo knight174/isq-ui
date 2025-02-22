@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
 .aside-comps
   h2 组件
   ul
@@ -10,10 +10,12 @@
       router-link(to='/doc/modal') Modal组件
     li
       router-link(to='/doc/tabs') Tabs组件
+    li
+      router-link(to='/doc/card') Card组件
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 export default {
-  name: 'DocAsideComps'
-}
+  name: 'DocAsideComps',
+};
 </script>

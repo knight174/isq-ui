@@ -1,23 +1,24 @@
-import {createWebHashHistory, createRouter} from 'vue-router'
-import Home from "../views/Home.vue"
-import Doc from "../views/Doc.vue"
-import Intro from "../views/Intro.vue"
-import SwitchDemo from "../components/demos/SwitchDemo.vue"
-import ButtonDemo from "../components/demos/ButtonDemo.vue"
-import ModalDemo from "../components/demos/ModalDemo.vue"
-import TabsDemo from "../components/demos/TabsDemo.vue"
+import { createWebHashHistory, createRouter } from 'vue-router';
+import Home from '../views/Home.vue';
+import Doc from '../views/Doc.vue';
+import Intro from '../views/Intro.vue';
+import SwitchDemo from '../components/demos/SwitchDemo.vue';
+import ButtonDemo from '../components/demos/ButtonDemo.vue';
+import ModalDemo from '../components/demos/ModalDemo.vue';
+import TabsDemo from '../components/demos/TabsDemo.vue';
+import CardDemo from '../components/demos/CardDemo.vue';
 
 const history = createWebHashHistory();
 const router = createRouter({
   history,
   scrollBehavior: () => {
-    return {left: 0, top: 0}
+    return { left: 0, top: 0 };
   },
   routes: [
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
     },
     {
       path: '/doc',
@@ -55,15 +56,21 @@ const router = createRouter({
           name: 'TabsDemo',
           // component: () => import(/* webpackChunkName: "tabs" */ "../components/demos/TabsDemo.vue"),
           component: TabsDemo,
-        }
-      ]
+        },
+        {
+          path: 'card',
+          name: 'CardDemo',
+          component: CardDemo,
+        },
+      ],
     },
     {
-      path: "/:pathMatch(.*)*",
-      name: "NotFound",
-      component: () => import(/* webpackChunkName: "notfound" */ "../views/NotFound.vue"),
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () =>
+        import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue'),
     },
-  ]
+  ],
 });
 
 export default router;
