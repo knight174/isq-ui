@@ -44,47 +44,40 @@ export default {
     CardDemo4,
   },
   setup() {
-    const utilStr =
-      `
-<script lang='ts'>
-// import the component (Card) and the css file
+    const utilStr = `
+<script lang="ts">
 import { Card } from 'isq-ui'
 import 'isq-ui/dist/lib/isq.css'
 
 export default {
-  components: {
-    Card,
-  },
-};\n` + '<\/script>';
+  components: { Card }
+}
+<\/script>`;
 
-    const demo1 =
-      `
+    const demo1 = `
 <template>
   <Card>
     <template #header>卡片标题</template>
     <div>这是卡片的内容，可以包含任何内容。</div>
   </Card>
-</template>` + utilStr;
+</template>${utilStr}`;
 
-    const demo2 =
-      `
+    const demo2 = `
 <template>
   <Card shadow="never">
     <div>无阴影的卡片</div>
   </Card>
-</template>` + utilStr;
+</template>${utilStr}`;
 
-    const demo3 =
-      `
+    const demo3 = `
 <template>
   <Card shadow="hover" hoverable>
     <template #header>悬浮显示阴影</template>
     <div>鼠标悬浮时会有阴影和上浮效果</div>
   </Card>
-</template>` + utilStr;
+</template>${utilStr}`;
 
-    const demo4 =
-      `
+    const demo4 = `
 <template>
   <Card>
     <template #header>完整示例</template>
@@ -93,7 +86,7 @@ export default {
       <Button>操作按钮</Button>
     </template>
   </Card>
-</template>` + utilStr;
+</template>${utilStr}`;
 
     const CardCase1 = CardDemo1;
     const CardCase2 = CardDemo2;

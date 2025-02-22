@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Prism from 'prismjs';
-import 'prismjs/themes/prism-solarizedlight.css';
+import '../assets/scss/prism-custom.scss';
 import Button from '../lib/Button.vue';
 import { onMounted, ref } from 'vue';
 export default {
