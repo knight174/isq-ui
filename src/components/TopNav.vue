@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
 .topnav
   .logo
     img(:src='logo', alt='iSQ-UI-Logo', @click='toHome')
@@ -7,33 +7,35 @@
     li
       router-link(to='/doc') 文档
     li
-      a(href='https://github.com/Knight174/iSQ-UI-source', target='_blank') GitHub
+      a(href='https://github.com/Knight174/isq-ui', target='_blank') GitHub
   .menu-btn(@click='switchAside', v-if='!isHome') 📖
 </template>
 
-<script lang='ts'>
-import { inject, Ref } from "vue";
-import logo from "../assets/logo.png";
-import { useRouter } from "vue-router";
+<script lang="ts">
+import { inject, Ref } from 'vue';
+import logo from '../assets/logo.png';
+import { useRouter } from 'vue-router';
 
 export default {
-  name: "TopNav",
+  name: 'TopNav',
   setup() {
     const router = useRouter();
-    const asideVisible = inject<Ref<boolean>>("mark");
+    const asideVisible = inject<Ref<boolean>>('mark');
 
     const switchAside = () => {
-      asideVisible.value = !asideVisible.value;
+      if (asideVisible) {
+        asideVisible.value = !asideVisible.value;
+      }
     };
 
     const toHome = () => {
-      router.push({ name: "Home" });
+      router.push({ name: 'Home' });
     };
 
     let isHome = false;
 
     const currentRouterName = router.currentRoute.value.name;
-    if (currentRouterName === "Home") {
+    if (currentRouterName === 'Home') {
       isHome = !isHome;
     }
 
@@ -51,7 +53,7 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .menu-btn {
   cursor: pointer;
   font-size: $s-title;
@@ -99,7 +101,7 @@ export default {
       font-size: $s-title;
       font-weight: 700;
       letter-spacing: 0.25rem;
-      color: $c-white!important;
+      color: $c-white !important;
     }
   }
   .menu {
@@ -109,7 +111,7 @@ export default {
       margin-left: 2rem;
       a {
         font-size: $s-font;
-        color: $c-white!important;
+        color: $c-white !important;
       }
       a:hover {
         border-bottom: 2px solid $c-white;
