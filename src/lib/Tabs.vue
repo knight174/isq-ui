@@ -10,7 +10,7 @@
         @click="select(title)"
         :ref="
           (el) => {
-            if (title === active) activeItem = el;
+            if (title === active) activeItem = el as HTMLDivElement;
           }
         "
       >
@@ -25,40 +25,49 @@
         v-for="(comps, index) in defaults"
         :is="comps"
         :key="index"
-        :class="{ active: comps.props.title === active }"
+        :class="{ active: comps?.props?.title === active }"
       ></component>
     </div>
   </div>
 </template>
 
-<script lang='ts'>
-import { onMounted, ref, watchEffect } from "vue";
-import Tab from "./Tab.vue";
+<script lang="ts">
+import { onMounted, ref, watchEffect } from 'vue';
+import Tab from './Tab.vue';
+import type { Ref } from 'vue';
 
 export default {
-  name: "Tabs",
+  name: 'Tabs',
   components: {
     Tab,
   },
   props: {
     active: {
       type: String,
+      required: true,
     },
   },
   setup(props, context) {
-    const defaults = context.slots.default();
+    // 确保 default() 存在
+    const defaultSlot = context.slots.default;
+    if (!defaultSlot) {
+      throw new Error('Tabs组件需要默认插槽！');
+    }
+
+    const defaults = defaultSlot();
     defaults.forEach((vnode) => {
       if (vnode.type !== Tab) {
-        throw new Error("Tabs的子标签必须是Tab！");
+        throw new Error('Tabs的子标签必须是Tab！');
       }
     });
 
-    let titles = defaults.map((vnode) => {
-      return vnode.props.title;
+    const titles = defaults.map((vnode) => {
+      return vnode.props?.title || ''; // 使用可选链操作符
     });
 
-    const select = (title: String) => {
-      context.emit("update:active", title);
+    const select = (title: string) => {
+      // 使用小写的string类型
+      context.emit('update:active', title);
     };
 
     const { activeItem, bottomLine, nav } = useBottomLine();
@@ -66,15 +75,17 @@ export default {
     onMounted(() => {
       watchEffect(
         () => {
-          // 返回元素的大小及其相对于视口的位置
+          if (!activeItem.value || !bottomLine.value || !nav.value) return;
+
           const { width } = activeItem.value.getBoundingClientRect();
-          bottomLine.value.style.width = width + "px";
-          const { left: currentLeft } = activeItem.value.getBoundingClientRect();
+          bottomLine.value.style.width = width + 'px';
+          const { left: currentLeft } =
+            activeItem.value.getBoundingClientRect();
           const { left: navLeft } = nav.value.getBoundingClientRect();
           const left = currentLeft + nav.value.scrollLeft - navLeft;
-          bottomLine.value.style.left = left + "px";
+          bottomLine.value.style.left = left + 'px';
         },
-        { flush: "post" }
+        { flush: 'post' }
       );
     });
 
@@ -90,14 +101,14 @@ export default {
 };
 
 const useBottomLine = () => {
-  const activeItem = ref<HTMLDivElement>(null);
-  const bottomLine = ref<HTMLDivElement>(null);
-  const nav = ref<HTMLDivElement>(null);
+  const activeItem = ref<HTMLDivElement | null>(null);
+  const bottomLine = ref<HTMLDivElement | null>(null);
+  const nav = ref<HTMLDivElement | null>(null);
   return { activeItem, bottomLine, nav };
 };
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .isq-tabs {
   .isq-tabs-nav {
     position: relative;
